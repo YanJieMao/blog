@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="眼睫毛能扫地的小屋">
+    <meta name="keyword" content="眼睫毛能扫地">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        win10-mysql5.7安装与配置 - 眼睫毛能扫地的小屋
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 若无闲事挂心头， 便是人间好时节 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>眼睫毛能扫地</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#win10-MySQL5-7-安装与配置"><span class="toc-text">win10-MySQL5.7 安装与配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置"><span class="toc-text">配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置全局变量"><span class="toc-text">设置全局变量</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 若无闲事挂心头， 便是人间好时节 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        win10-mysql5.7安装与配置
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2020-07-21 16:48:33</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#mysql" title="mysql">mysql</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h1 id="win10-MySQL5-7-安装与配置"><a href="#win10-MySQL5-7-安装与配置" class="headerlink" title="win10-MySQL5.7 安装与配置"></a>win10-MySQL5.7 安装与配置</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><blockquote>
+<p>官网下载zip</p>
+</blockquote>
+<p><a href="https://downloads.mysql.com/archives/community/" target="_blank" rel="noopener">mysql</a>:<a href="https://downloads.mysql.com/archives/community/" target="_blank" rel="noopener">https://downloads.mysql.com/archives/community/</a></p>
+<blockquote>
+<p>解压到任意你想安装的目录</p>
+</blockquote>
+<p>ps:不要用中文目录</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><blockquote>
+<p>安装mysql服务</p>
+</blockquote>
+<ul>
+<li><p>CMD以管理员打开,切换到mysql安装目录 </p>
+</li>
+<li><p>执行命令:mysql –install</p>
+<p><img src="/img/image-20200721121453787.png" alt="image-20200721121453787"></p>
+</li>
+</ul>
+<blockquote>
+<p>初始化mysql</p>
+</blockquote>
+<ul>
+<li><p>初始化会生成一个随机密码，这里需要记住这个密码，方便之后登录mysql进行修改。</p>
+</li>
+<li><p>初始化命令</p>
+</li>
+<li><p>mysqld –initialize –console</p>
+</li>
+</ul>
+<p><img src="/img/image-20200721121904169.png" alt="image-20200721121904169"></p>
+<blockquote>
+<p>启动mysql服务</p>
+</blockquote>
+<ul>
+<li>登录mysql之前,需要启动之前安装的服务</li>
+<li>命令: net start mysql</li>
+</ul>
+<p><img src="/img/image-20200721123016678.png" alt="image-20200721123016678"></p>
+<blockquote>
+<p>登录</p>
+</blockquote>
+<ul>
+<li>这时登录名为root,密码为刚才随机生成的密码</li>
+<li>命令: mysql -uroot -p</li>
+</ul>
+<p><img src="/img/image-20200721123700915.png" alt="image-20200721123700915"></p>
+<p><em>出错解决方案</em></p>
+<ol>
+<li>首先,停止mysql服务:net stop mysql</li>
+<li>然后启动重新登录</li>
+</ol>
+<img src="/img/image-20200721124515815.png" alt="image-20200721124515815" style="zoom:80%;">
+
+<p><strong><em>ps:实际上第一次登录时就应该加上随机生成的密码</em></strong></p>
+<blockquote>
+<p> 修改密码</p>
+</blockquote>
+<ul>
+<li>命令 :alter user ‘root’@’localhost’ identified by ‘xxxx’;</li>
+<li>然后退出重新登录</li>
+</ul>
+<img src="/img/image-20200721124908636.png" alt="image-20200721124908636" style="zoom:80%;">
+
+<p>到这里,mysql5.7的安装与配置已经完成.</p>
+<p>然后就可以用MysqlFront这类数据库管理软件登录了</p>
+<h2 id="设置全局变量"><a href="#设置全局变量" class="headerlink" title="设置全局变量"></a>设置全局变量</h2><p>右键此电脑👉点击左侧高级系统设置👉点击最下面的环境变量👉下面系统变量中找到path👉点击下面的编辑按钮👉点击右侧新建👉将mysql的bin目录地址复制进去(C:\Program Files\MySQL\mysql-5.7.30-winx64\bin)</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+        <li>
+            <a target="_blank" href="https://www.zhihu.com/people/hao-jia-yi-50">
+                            <span class="fa-stack fa-lg">
+                                 <i class="iconfont icon-zhihu"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/YanJieMao">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+        */
+        if( '' || '')
+        var disqus_config = function () {
+            this.page.url = '';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://airclouds-blog.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+
+
+
+</html>

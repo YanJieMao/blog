@@ -11,7 +11,7 @@
 
     <title>
         
-        Hello World - 眼睫毛能扫地的小屋
+        Git基本操作 - 眼睫毛能扫地的小屋
         
     </title>
 
@@ -89,7 +89,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git基本操作"><span class="toc-text">Git基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Git配置"><span class="toc-text">Git配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git命令"><span class="toc-text">Git命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#新建仓库"><span class="toc-text">新建仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加到缓冲区"><span class="toc-text">添加到缓冲区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#提交到本地仓库"><span class="toc-text">提交到本地仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#提交到远程仓库"><span class="toc-text">提交到远程仓库</span></a></li></ol></li></ol></li></ol>
 </div>
     
 </div>
@@ -120,15 +120,15 @@
 
 <div class="post-container">
     <div class="post-title">
-        Hello World
+        Git基本操作
     </div>
 
     <div class="post-meta">
-        <span class="attr">发布于：<span>2020-07-20 08:50:18</span></span>
+        <span class="attr">发布于：<span>2020-07-26 13:46:19</span></span>
         
         <span class="attr">标签：/
         
-        <a class="tag" href="/tags/#lalala" title="lalala">lalala</a>
+        <a class="tag" href="/tags/#Git" title="Git">Git</a>
         <span>/</span>
         
         
@@ -138,7 +138,67 @@
 </span>
     </div>
     <div class="post-content ">
-        <p>眼睫毛的小屋诞生了</p>
+        <h1 id="Git基本操作"><a href="#Git基本操作" class="headerlink" title="Git基本操作"></a>Git基本操作</h1><h2 id="Git配置"><a href="#Git配置" class="headerlink" title="Git配置"></a>Git配置</h2><p>查看配置 git config -l</p>
+<img src="/img/image-20200720170109557.png" alt="image-20200720170109557">
+
+
+
+<p>查看不同级别的配置文件</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看系统config</span></span><br><span class="line">git<span class="built_in"> config </span>--system --list</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看当前用户（global）配置</span></span><br><span class="line">git<span class="built_in"> config </span>--global --list</span><br></pre></td></tr></table></figure>
+
+<p><strong>Git相关的配置文件：</strong></p>
+<p>1）、Git\etc\gitconfig  ：Git 安装目录下的 gitconfig   –system 系统级</p>
+<p>2）、C:\Users\Administrator\ .gitconfig   只适用于当前登录用户的配置  –global 全局</p>
+<blockquote>
+<p>设置用户名与邮箱（用户标识，必要）</p>
+</blockquote>
+<p>安装git后最重要的就是设置用户名和Email地址</p>
+<p>每次提交都会用到这些信息</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git<span class="built_in"> config </span>--global user.name <span class="string">"YanJieMao"</span> </span><br><span class="line">git<span class="built_in"> config </span>--global user.email <span class="string">"YanJieMao@qq.com"</span></span><br></pre></td></tr></table></figure>
+
+<p><em>如果你希望在一个特定的项目中使用不同的名称或e-mail地址，你可以在该项目中运行该命令而不要–global选项。总之–global为全局配置，不加为某个项目的特定配置。</em></p>
+<h2 id="Git命令"><a href="#Git命令" class="headerlink" title="Git命令"></a>Git命令</h2><h3 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h3><blockquote>
+<p>在本地新建 git init </p>
+</blockquote>
+<img src="/img/image-20200720192525531.png" alt="image-20200720192525531" style="zoom:80%;">
+
+<blockquote>
+<p>从远程仓库clone git clone <a href="https://github.com/mkdirHao/git_test.git" target="_blank" rel="noopener">https://github.com/mkdirHao/git_test.git</a></p>
+</blockquote>
+<img src="/img/image-20200720192815294.png" alt="image-20200720192815294" style="zoom:80%;">
+
+
+
+<h3 id="添加到缓冲区"><a href="#添加到缓冲区" class="headerlink" title="添加到缓冲区"></a>添加到缓冲区</h3><blockquote>
+<p>git add</p>
+</blockquote>
+<img src="/img/image-20200720193141314.png" alt="image-20200720193141314" style="zoom:80%;">
+
+
+
+<h3 id="提交到本地仓库"><a href="#提交到本地仓库" class="headerlink" title="提交到本地仓库"></a>提交到本地仓库</h3><blockquote>
+<p>git commit</p>
+</blockquote>
+<img src="/img/image-20200720193354940.png" alt="image-20200720193354940">
+
+
+
+<h3 id="提交到远程仓库"><a href="#提交到远程仓库" class="headerlink" title="提交到远程仓库"></a>提交到远程仓库</h3><blockquote>
+<p>git push</p>
+</blockquote>
+<img src="/img/image-20200720193812421.png" alt="image-20200720193812421" style="zoom:80%;">
+
+<p>输入命令后会让输入账户密码</p>
+<img src="/img/image-20200720193858286.png" alt="image-20200720193858286" style="zoom:50%;">
+
+<p> 账号密码正确后就可以成功提交到远程仓库了</p>
+<img src="/img/image-20200720194133682.png" alt="image-20200720194133682" style="zoom:80%;">
+
+<p>看一下我们的远程仓库，这时已经有了</p>
+<img src="/img/image-20200720194356327.png" alt="image-20200720194356327" style="zoom:50%;">
+
+
+
 
         
             <div class="donate-container">
