@@ -1,22 +1,22 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.2.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.2.0" type="image/png" sizes="32x32"><meta name="description" content="1.Spring5概述       1.Spring是轻量级的开源JavaEE框架 2.Spring可以解决企业应用开发的复杂性 3.Spring有两个核心的部分：IOC和Aop  IOC:控制反转，把创建对象的过程交给Spring进行管理 Aop:面向切面，不修改源代码，进行系统增强">
 <meta property="og:type" content="article">
-<meta property="og:title" content="spring5">
+<meta property="og:title" content="Spring5">
 <meta property="og:url" content="https://yanjiemao.github.io/2020/11/07/spring5/index.html">
 <meta property="og:site_name" content="YanJieMao&#39;s Blog">
 <meta property="og:description" content="1.Spring5概述       1.Spring是轻量级的开源JavaEE框架 2.Spring可以解决企业应用开发的复杂性 3.Spring有两个核心的部分：IOC和Aop  IOC:控制反转，把创建对象的过程交给Spring进行管理 Aop:面向切面，不修改源代码，进行系统增强">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://yanjiemao.github.io/2020/11/07/spring5/img/image-20201107230312053.png">
-<meta property="og:image" content="https://yanjiemao.github.io/2020/11/07/spring5/img/image-20201107234712314.png">
-<meta property="og:image" content="https://yanjiemao.github.io/2020/11/07/spring5/img/spring-ioc-11.8%E5%9B%BE1.png">
-<meta property="og:image" content="https://yanjiemao.github.io/2020/11/07/spring5/img/spring-ioc-11.8%E5%9B%BE2.png">
-<meta property="og:image" content="https://yanjiemao.github.io/2020/11/07/spring5/img/image-20201108002710368.png">
+<meta property="og:image" content="https://yanjiemao.github.io/img/image-20201107230312053.png">
+<meta property="og:image" content="https://yanjiemao.github.io/img/image-20201107234712314.png">
+<meta property="og:image" content="https://yanjiemao.github.io/img/spring-ioc-11.8%E5%9B%BE1.png">
+<meta property="og:image" content="https://yanjiemao.github.io/img/spring-ioc-11.8%E5%9B%BE2.png">
+<meta property="og:image" content="https://yanjiemao.github.io/img/image-20201108002710368.png">
 <meta property="article:published_time" content="2020-11-07T13:48:52.000Z">
-<meta property="article:modified_time" content="2020-11-07T16:35:29.562Z">
+<meta property="article:modified_time" content="2020-11-07T16:39:47.265Z">
 <meta property="article:author" content="眼睫毛能扫地">
 <meta property="article:tag" content="Spring">
 <meta property="article:tag" content="Spring5">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://yanjiemao.github.io/2020/11/07/spring5/img/image-20201107230312053.png"><title>spring5 | YanJieMao's Blog</title><link ref="canonical" href="https://yanjiemao.github.io/2020/11/07/spring5/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.2.0"><script>var Stun = window.Stun || {};
+<meta name="twitter:image" content="https://yanjiemao.github.io/img/image-20201107230312053.png"><title>Spring5 | YanJieMao's Blog</title><link ref="canonical" href="https://yanjiemao.github.io/2020/11/07/spring5/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.2.0"><script>var Stun = window.Stun || {};
 var CONFIG = {
   root: '/',
   algolia: undefined,
@@ -40,7 +40,7 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.2.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-fingerprint"></i></span><span class="header-nav-menu-item__text">关于</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">搜索</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">YanJieMao's Blog</div><div class="header-banner-info__subtitle">若无闲事挂心头  便是人间好时节</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">spring5</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-11-07</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2020-11-08</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon"><i class="far fa-file-word"></i></span><span class="post-meta-item__info">字数统计</span><span class="post-meta-item__value">670</span></span><span class="post-meta-item post-meta-item--readtime"><span class="post-meta-item__icon"><i class="far fa-clock"></i></span><span class="post-meta-item__info">阅读时长</span><span class="post-meta-item__value">4分</span></span></div></header><div class="post-body">
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.2.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-fingerprint"></i></span><span class="header-nav-menu-item__text">关于</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">搜索</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">YanJieMao's Blog</div><div class="header-banner-info__subtitle">若无闲事挂心头  便是人间好时节</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">Spring5</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-11-07</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2020-11-08</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon"><i class="far fa-file-word"></i></span><span class="post-meta-item__info">字数统计</span><span class="post-meta-item__value">670</span></span><span class="post-meta-item post-meta-item--readtime"><span class="post-meta-item__icon"><i class="far fa-clock"></i></span><span class="post-meta-item__info">阅读时长</span><span class="post-meta-item__value">4分</span></span></div></header><div class="post-body">
         <h1 id="1-Spring5概述"   >
           <a href="#1-Spring5概述" class="heading-link"><i class="fas fa-link"></i></a>1.Spring5概述</h1>
       <p>1.Spring是轻量级的开源JavaEE框架</p>
@@ -73,7 +73,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.2.0"></he
       <p>1.在<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://repo.spring.io/release/org/springframework/spring/5.2.6.RELEASE/下载Spring5" >https://repo.spring.io/release/org/springframework/spring/5.2.6.RELEASE/下载Spring5</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
 <p>2.在idea中新建普通的java工程</p>
 <p>3.导入Spring5相关的jar包</p>
-<img src="img/image-20201107230312053.png" alt="image-20201107230312053" style="zoom:80%;" />
+<img src="/img/image-20201107230312053.png" alt="image-20201107230312053" style="zoom:80%;" />
 
 <p>4 .创建普通User类，在这个类创建普通方法</p>
 <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;add...,&quot;</span>);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
@@ -89,7 +89,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.2.0"></he
 <figure class="highlight java"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testAdd</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="comment">//1加载spring加载文件</span></span><br><span class="line">  ApplicationContext context =</span><br><span class="line">    <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">&quot;bean1.xml&quot;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">//2 获取配置创建的对象</span></span><br><span class="line">  User user = context.getBean(<span class="string">&quot;user&quot;</span>, User.class);</span><br><span class="line">  System.out.println(user);</span><br><span class="line">  user.add();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
 
 <p>7.运行</p>
-<img src="img/image-20201107234712314.png" alt="image-20201107234712314" style="zoom:80%;" />
+<img src="/img/image-20201107234712314.png" alt="image-20201107234712314" style="zoom:80%;" />
 
 
         <h1 id="2-IOC"   >
@@ -107,9 +107,9 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.2.0"></he
 <li>xml解析、工厂模式、反射</li>
 </ul>
 <p>3.ioc底层原理</p>
-<p><img src="img/spring-ioc-11.8%E5%9B%BE1.png" alt="spring-ioc-11.8图1"></p>
+<p><img src="/img/spring-ioc-11.8%E5%9B%BE1.png" alt="spring-ioc-11.8图1"></p>
 <p>IOC过程</p>
-<p><img src="img/spring-ioc-11.8%E5%9B%BE2.png" alt="spring-ioc-11.8图2"></p>
+<p><img src="/img/spring-ioc-11.8%E5%9B%BE2.png" alt="spring-ioc-11.8图2"></p>
 <p>Spring中的IOC（BeanFactory接口）</p>
 <p>1、IOC 思想基于 IOC 容器完成，IOC 容器底层就是对象工厂<br>2、Spring 提供 IOC 容器实现两种方式：（两个接口）</p>
 <ul>
@@ -117,7 +117,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.2.0"></he
 <li>ApplicationContext：BeanFactory 接口的子接口，提供更多更强大的功能，一般由开发人员进行使用加载配置文件时候就会把在配置文件对象进行创建</li>
 </ul>
 <p>3、ApplicationContext 接口有两个实现类</p>
-<img src="img/image-20201108002710368.png" alt="image-20201108002710368" style="zoom:80%;" />
+<img src="/img/image-20201108002710368.png" alt="image-20201108002710368" style="zoom:80%;" />
 
 
         <h2 id="2-1IOC操作Bean管理"   >
